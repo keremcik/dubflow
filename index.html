@@ -6,32 +6,29 @@
     <title>DubFlow AI | Tester Portal</title>
     <style>
         :root {
-            /* Renk Paleti Detaylı Anlatım:
-               - --bg: Derin teknolojik his için çok koyu mavi/siyah ton (Odak noktası).
-               - --card: Cam efektini oluşturmak için hafif yarı saydam koyu ton.
-               - --primary: Canlı neon turkuaz/mavi (Ana aksan ve butonlar için).
-               - --secondary: Canlı neon mor/leylak (Açık tonlar ve geçişler için).
-               - --text: Yüksek okunurluk için açık gri/beyaz ton (Metinler).
-               - --liquid: Sıvı cam ve grid efekti için özel degradeler.
+            /* Renk Paleti Detaylı Anlatım (image_65dfd1.jpg'den esinlenildi):
+               - --bg-deep: Görseldeki derin şehir ve şehir manzarası koyu mavi/siyah ton.
+               - --cyber-pink: Görseldeki ana veri sıçraması ve neon pembe tonu.
+               - --cyber-cyan: Görseldeki kulaklık ve veri çizgileri neon turkuaz tonu.
+               - --card-bg: Yarı saydam cyber-panel hissi için koyu bir ton.
+               - --text-main: Yüksek okunurluk için açık gri/beyaz ton.
             */
-            --bg: #030712;
-            --card: rgba(17, 24, 39, 0.7);
-            --primary: #38bdf8;
-            --secondary: #818cf8;
-            --text: #f3f4f6;
-            --liquid-bg: linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(3, 7, 18, 1) 100%), 
-                        radial-gradient(circle at 10% 20%, rgba(129, 140, 248, 0.3) 0%, transparent 60%),
-                        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.3) 0%, transparent 60%),
-                        repeating-linear-gradient(rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 30px);
-            --glass-border: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.2));
-            --btn-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --bg-deep: #03081a;
+            --cyber-pink: #f472b6;
+            --cyber-cyan: #22d3ee;
+            --card-bg: rgba(17, 24, 39, 0.9);
+            --text-main: #f3f4f6;
+            --btn-gradient: linear-gradient(135deg, var(--cyber-pink), var(--cyber-cyan));
+            --border-glow: 0 0 10px rgba(34, 211, 238, 0.3);
         }
 
         body {
-            background-color: var(--bg);
-            background-image: var(--liquid-bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(244, 114, 182, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.15) 0%, transparent 50%);
+            color: var(--text-main);
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             display: flex;
             align-items: center;
@@ -40,84 +37,93 @@
             padding: 20px;
         }
 
-        /* "Liquid Glass" Efektli Kart */
-        .glass-card {
+        .cyber-container {
             width: 90%;
-            max-width: 440px;
-            background: var(--card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            max-width: 420px;
+            background: var(--card-bg);
             padding: 35px;
-            border-radius: 32px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.03);
-            border: 1px solid transparent;
-            border-image: var(--glass-border);
-            border-image-slice: 1;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
-            overflow: hidden;
             position: relative;
+            overflow: hidden;
         }
 
-        .logo-area { font-size: 3.5rem; margin-bottom: 10px; }
-        
-        h1 {
-            font-size: 2.2rem;
-            margin: 0 0 15px 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+        /* Cyber-Electric Border Efekti */
+        .cyber-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: var(--btn-gradient);
+            box-shadow: var(--border-glow);
         }
 
-        p {
-            color: #9ca3af;
-            line-height: 1.7;
-            margin-bottom: 35px;
-            font-size: 1rem;
-        }
-
-        .steps-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .app-header {
             margin-bottom: 30px;
         }
 
-        .step {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 18px 20px;
+        /* Görseldeki logoyu veya benzer bir ikonu buraya ekle */
+        .app-logo { font-size: 3.5rem; margin-bottom: -5px; }
+        
+        h1 {
+            font-size: 2.3rem;
+            margin: 0 0 10px 0;
+            background: var(--btn-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1.5px;
+            font-weight: 800;
+        }
+
+        p.app-desc {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .step-module {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 15px 20px;
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            border: 1px solid transparent;
-            border-image: var(--glass-border);
-            border-image-slice: 1;
-            transition: background 0.3s ease;
-        }
-
-        .step-info {
-            flex-grow: 1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             text-align: left;
         }
 
-        .step-n {
-            font-size: 0.75rem;
-            color: var(--primary);
-            font-weight: 700;
+        .step-num {
+            font-size: 0.8rem;
+            color: var(--cyber-cyan);
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 4px;
-            display: block;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+
+        .step-content {
+            flex-grow: 1;
         }
 
         .step-title {
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 8px;
             display: block;
+            color: #fff;
         }
 
-        .step-desc {
+        .step-text {
             font-size: 0.85rem;
             color: #9ca3af;
             line-height: 1.5;
@@ -125,34 +131,42 @@
             display: block;
         }
 
-        .btn {
+        .cyber-btn {
             display: inline-block;
             background: var(--btn-gradient);
-            color: #030712;
+            color: #03081a;
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 800;
             font-size: 0.9rem;
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
-            transition: transform 0.2s;
+            box-shadow: 0 8px 15px rgba(244, 114, 182, 0.2);
+            transition: transform 0.1s ease, box-shadow 0.2s ease;
         }
 
-        .btn:active {
+        .cyber-btn:active {
             transform: scale(0.97);
+            box-shadow: 0 4px 10px rgba(244, 114, 182, 0.2);
         }
 
-        .warning-box {
+        .cyber-btn:hover {
+            box-shadow: 0 12px 20px rgba(244, 114, 182, 0.3);
+        }
+
+        .warning-module {
             padding: 15px;
-            background: rgba(244, 114, 182, 0.1);
-            border-radius: 16px;
+            background: rgba(244, 114, 182, 0.08);
+            border-radius: 14px;
             border: 1px dashed rgba(244, 114, 182, 0.3);
-            color: #f472b6;
+            color: #fca5a5;
             font-size: 0.85rem;
             margin-top: 30px;
+            line-height: 1.5;
         }
 
-        .footer {
+        .warning-module strong { color: var(--cyber-pink); }
+
+        .krmg-footer {
             margin-top: 25px;
             font-size: 0.8rem;
             color: #64748b;
@@ -161,45 +175,47 @@
 </head>
 <body>
 
-<div class="glass-card">
-    <div class="logo-area">🎙️</div>
-    <h1>DubFlow AI</h1>
-    <p>Dünyanın dilini konuşmaya hazır mısın? Test ekibimize katılarak bize güç ver!</p>
+<div class="cyber-container">
+    <div class="app-header">
+        <div class="app-logo">🎙️</div>
+        <h1>DubFlow AI</h1>
+        <p class="app-desc">Dünyanın dilini konuşmaya hazır mısın? Test ekibimize katılarak bize güç ver!</p>
+    </div>
 
-    <div class="steps-container">
-        <div class="step">
-            <div class="step-info">
-                <span class="step-n">Adım 1</span>
+    <div class="steps-list">
+        <div class="step-module">
+            <span class="step-num">01</span>
+            <div class="step-content">
                 <span class="step-title">Google Grubuna Katıl</span>
-                <span class="step-desc">Test güncellemelerini ve talimatları takip edin. (Gerekli)</span>
-                <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn">Gruba Katıl</a>
+                <span class="step-text">Test güncellemelerine ve talimatlara erişim için gerekli.</span>
+                <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="cyber-btn">Gruba Katıl</a>
             </div>
         </div>
 
-        <div class="step">
-            <div class="step-info">
-                <span class="step-n">Adım 2</span>
-                <span class="step-title">Testi Etkinleştir (Web Linki)</span>
-                <span class="step-desc">Play Console üzerinden test sürümüne erişim izni verin.</span>
-                <a href="BURAYA_PLAY_CONSOLEDAKI_WEB_LINKINI_YAPISTIR" target="_blank" class="btn">Confirm Web Test</a>
+        <div class="step-module">
+            <span class="step-num">02</span>
+            <div class="step-content">
+                <span class="step-title">Testi Etkinleştir</span>
+                <span class="step-desc">Play Console'da test sürümünü onaylayın.</span>
+                <a href="BURAYA_PLAY_CONSOLEDAKI_WEB_LINKINI_YAPISTIR" target="_blank" class="cyber-btn">Onay Ver</a>
             </div>
         </div>
 
-        <div class="step">
-            <div class="step-info">
-                <span class="step-n">Adım 3</span>
+        <div class="step-module">
+            <span class="step-num">03</span>
+            <div class="step-content">
                 <span class="step-title">Uygulamayı İndir</span>
-                <span class="step-desc">Play Store'dan DubFlow'u indirin ve deneyimleyin.</span>
-                <a href="BURAYA_PLAY_CONSOLEDAKI_ANDROID_LINKINI_YAPISTIR" target="_blank" class="btn">Play Store'dan İndir</a>
+                <span class="step-desc">Play Store'dan DubFlow'u yükleyin ve deneyimleyin.</span>
+                <a href="BURAYA_PLAY_CONSOLEDAKI_ANDROID_LINKINI_YAPISTIR" target="_blank" class="cyber-btn">Play Store'dan İndir</a>
             </div>
         </div>
     </div>
 
-    <div class="warning-box">
-        <strong>⚠️ ÖNEMLİ:</strong> Kurallar gereği, uygulamayı 14 gün boyunca silmemeniz ve ara ara açmanız gerekmektedir. Teşekkürler.
+    <div class="warning-module">
+        <strong>⚠️ ÖNEMLİ:</strong> Lütfen uygulamayı 14 gün boyunca silmeyin ve ara ara açıp kullanarak test sürecine destek olun. Teşekkürler.
     </div>
 
-    <div class="footer">
+    <div class="krmg-footer">
         © 2026 Krmg Studio - Düzce'den Sevgilerle
     </div>
 </div>
