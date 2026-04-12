@@ -12,6 +12,9 @@
             --accent-blue: #6e7ff3;
             --text-main: #ffffff;
             --text-dim: rgba(255, 255, 255, 0.7);
+            /* Yeni Buton Renkleri */
+            --btn-grad-start: #1957df;
+            --btn-grad-end: #7c14b8;
         }
 
         * {
@@ -80,13 +83,13 @@
         }
 
         .step-box {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .step-header {
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .step-number {
@@ -109,10 +112,10 @@
         }
 
         .step-description {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-dim);
-            line-height: 1.6;
-            margin-bottom: 16px;
+            line-height: 1.5;
+            margin-top: 12px;
             padding-left: 36px;
         }
 
@@ -127,6 +130,7 @@
             font-size: 16px;
             transition: all 0.3s ease;
             margin-left: 36px;
+            border: none;
         }
 
         .btn-primary {
@@ -134,15 +138,16 @@
             color: #000;
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
             color: #fff;
-            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 15px rgba(25, 87, 223, 0.3);
         }
 
         .btn:hover {
             transform: translateY(-2px);
             filter: brightness(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
         .btn-logo {
@@ -179,12 +184,14 @@
                     <div class="step-number">1</div>
                     <h3>Gruba Katılın</h3>
                 </div>
-                <p class="step-description">
-                    Test kullanıcısı yetkisi alabilmek için öncelikle Google Grubumuza katılmanız gerekmektedir.
-                </p>
+                
                 <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn btn-primary">
                     1. Gruba Katıl
                 </a>
+
+                <p class="step-description">
+                    Test kullanıcısı yetkisi alabilmek için öncelikle Google Grubumuza katılmanız gerekmektedir.
+                </p>
             </div>
 
             <div class="step-box">
@@ -192,13 +199,15 @@
                     <div class="step-number">2</div>
                     <h3>Testi Kabul Et ve İndir</h3>
                 </div>
-                <p class="step-description">
-                    Gruba katıldıktan sonra aşağıdaki bağlantıdan testi onaylayıp uygulamayı Play Store üzerinden indirebilirsiniz.
-                </p>
-                <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-secondary">
+
+                <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-gradient">
                     <img src="Başlıksız82_20260408222853.jpg" class="btn-logo" alt="">
                     2. Play Store Test Linki
                 </a>
+
+                <p class="step-description">
+                    Gruba katıldıktan sonra yukarıdaki bağlantıdan testi onaylayıp uygulamayı Play Store üzerinden indirebilirsiniz.
+                </p>
             </div>
         </div>
 
