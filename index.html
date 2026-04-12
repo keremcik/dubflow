@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DubFlow | Test Ekibi</title>
+    <title>DubFlow | Test Süreci</title>
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
             --accent-purple: #9d50bb;
@@ -23,7 +22,7 @@
         }
 
         body {
-            background: #050505; /* fallback */
+            background: #050505;
             background-image: 
                 radial-gradient(at 0% 0%, rgba(74, 20, 140, 0.4) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, rgba(13, 71, 161, 0.4) 0px, transparent 50%),
@@ -36,44 +35,36 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 450px;
             width: 100%;
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
-            border-radius: 32px;
+            border-radius: 35px;
             padding: 40px 24px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
-        .logo-area {
-            margin-bottom: 24px;
-        }
-
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-            margin: 0 auto 16px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 20px rgba(157, 80, 187, 0.3);
+        .app-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-            background: linear-gradient(to right, #fff, #ccc);
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+            background: linear-gradient(to bottom, #fff, #aaa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -81,138 +72,138 @@
         .subtitle {
             color: var(--text-dim);
             font-size: 16px;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
-        .steps {
+        .content-flow {
             text-align: left;
-            margin-bottom: 40px;
         }
 
-        .step-item {
+        .step-box {
+            margin-bottom: 30px;
+        }
+
+        .step-header {
             display: flex;
-            margin-bottom: 24px;
-            align-items: flex-start;
+            align-items: center;
+            margin-bottom: 12px;
         }
 
         .step-number {
-            background: var(--glass-border);
-            width: 28px;
-            height: 28px;
+            font-size: 14px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.1);
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            margin-right: 12px;
+            color: var(--accent-blue);
+        }
+
+        h3 {
+            font-size: 18px;
             font-weight: 600;
-            margin-right: 16px;
-            flex-shrink: 0;
         }
 
-        .step-text h3 {
-            font-size: 17px;
-            margin-bottom: 4px;
-        }
-
-        .step-text p {
-            font-size: 14px;
+        .step-description {
+            font-size: 15px;
             color: var(--text-dim);
-            line-height: 1.5;
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding-left: 36px;
         }
 
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 16px;
-            border-radius: 16px;
+            border-radius: 18px;
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
+            margin-left: 36px;
         }
 
         .btn-primary {
-            background: #fff;
+            background: #ffffff;
             color: #000;
         }
 
-        .btn-primary:hover {
-            transform: scale(1.02);
-            background: #f0f0f0;
-        }
-
         .btn-secondary {
-            background: var(--glass-border);
+            background: rgba(255, 255, 255, 0.1);
             color: #fff;
             border: 1px solid var(--glass-border);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .btn-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            margin-right: 10px;
+            object-fit: cover;
         }
 
         footer {
             margin-top: 40px;
-            font-size: 13px;
-            color: var(--text-dim);
+            border-top: 1px solid var(--glass-border);
+            padding-top: 25px;
         }
 
-        .thanks-msg {
+        .thanks {
+            font-size: 14px;
+            color: var(--text-dim);
             font-style: italic;
-            margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-area">
-            <div class="logo-placeholder">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
-            </div>
-            <h1>DubFlow</h1>
-            <p class="subtitle">Kapalı Test Süreci</p>
-        </div>
+        <img src="Başlıksız82_20260408222853.jpg" alt="DubFlow Logo" class="app-logo">
+        <h1>DubFlow</h1>
+        <p class="subtitle">Early Access & Testing</p>
 
-        <div class="steps">
-            <div class="step-item">
-                <div class="step-number">1</div>
-                <div class="step-text">
-                    <h3>Google Gruba Katıl</h3>
-                    <p>Test kullanıcısı olarak tanımlanmanız için önce aşağıdaki butondan test grubumuza dahil olmalısınız.</p>
+        <div class="content-flow">
+            <div class="step-box">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3>Gruba Katılın</h3>
                 </div>
+                <p class="step-description">
+                    Test kullanıcısı yetkisi alabilmek için öncelikle Google Grubumuza katılmanız gerekmektedir.
+                </p>
+                <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn btn-primary">
+                    1. Gruba Katıl
+                </a>
             </div>
 
-            <div class="step-item">
-                <div class="step-number">2</div>
-                <div class="step-text">
-                    <h3>Testi Kabul Et</h3>
-                    <p>Gruba katıldıktan sonra Play Store test bağlantısına giderek "Test Programına Katıl" butonuna tıklayın.</p>
+            <div class="step-box">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3>Testi Kabul Et ve İndir</h3>
                 </div>
+                <p class="step-description">
+                    Gruba katıldıktan sonra aşağıdaki bağlantıdan testi onaylayıp uygulamayı Play Store üzerinden indirebilirsiniz.
+                </p>
+                <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-secondary">
+                    <img src="Başlıksız82_20260408222853.jpg" class="btn-logo" alt="">
+                    2. Play Store Test Linki
+                </a>
             </div>
-
-            <div class="step-item">
-                <div class="step-number">3</div>
-                <div class="step-text">
-                    <h3>İndir ve Dene</h3>
-                    <p>İşlemler tamamlandığında uygulamayı Play Store üzerinden indirebilir ve geri bildirimlerinizi iletebilirsiniz.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cta-buttons">
-            <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn btn-primary">1. Gruba Katıl</a>
-            <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-secondary">2. Play Store Test Linki</a>
         </div>
 
         <footer>
-            <p class="thanks-msg">DubFlow'u mükemmelleştirmemize yardımcı olduğunuz için teşekkürler! ✨</p>
-            <p>© 2026 DubFlow AI Project</p>
+            <p class="thanks">DubFlow'u geliştirmemize yardımcı olduğun için teşekkürler! ✨</p>
         </footer>
     </div>
 
