@@ -2,148 +2,42 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DubFlow Test Ekibi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DubFlow AI | Tester Portal</title>
     <style>
-        :root {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --primary: #22d3ee;
-            --secondary: #818cf8;
-            --text: #f8fafc;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 450px;
-            background: var(--card);
-            padding: 30px;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .logo-area {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .step-card {
-            background: rgba(15, 23, 42, 0.5);
-            padding: 15px;
-            border-radius: 16px;
-            margin-bottom: 15px;
-            text-align: left;
-            border-left: 4px solid var(--primary);
-            transition: transform 0.2s;
-        }
-
-        .step-card:active {
-            transform: scale(0.98);
-        }
-
-        .step-num {
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .step-title {
-            display: block;
-            font-weight: 600;
-            margin: 5px 0 12px 0;
-        }
-
-        .btn {
-            display: block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #0f172a;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        .warning-box {
-            margin-top: 25px;
-            padding: 15px;
-            background: rgba(234, 179, 8, 0.1);
-            border-radius: 12px;
-            border: 1px dashed #eab308;
-            color: #fde047;
-            font-size: 0.85rem;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 0.75rem;
-            color: #64748b;
-        }
+        :root { --bg: #030712; --card: #111827; --primary: #38bdf8; --secondary: #818cf8; --text: #f3f4f6; }
+        body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { width: 90%; max-width: 420px; background: var(--card); padding: 30px; border-radius: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        h1 { font-size: 2rem; margin: 10px 0; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { color: #9ca3af; margin-bottom: 25px; font-size: 0.95rem; }
+        .step { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 18px; margin-bottom: 12px; text-align: left; border: 1px solid rgba(255,255,255,0.05); }
+        .step-n { font-size: 0.7rem; color: var(--primary); font-weight: bold; text-transform: uppercase; }
+        .btn { display: block; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #000; text-decoration: none; padding: 14px; border-radius: 14px; font-weight: bold; margin-top: 10px; font-size: 0.9rem; transition: opacity 0.2s; text-align: center; }
+        .info { margin-top: 20px; padding: 12px; background: rgba(56, 189, 248, 0.1); border-radius: 12px; font-size: 0.8rem; color: var(--primary); }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <div class="logo-area">🎙️</div>
+    <div style="font-size: 3rem;">🎙️</div>
     <h1>DubFlow AI</h1>
-    <p>Dünyanın dilini konuşmaya hazır mısın? Test ekibimize katılarak bize destek ol!</p>
-
-    <div class="step-card">
-        <span class="step-num">Adım 1</span>
-        <span class="step-title">Google Grubuna Katıl</span>
-        <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn">Gruba Katıl</a>
+    <p>Düzce'den dünyaya! Test grubumuza katılarak bize güç ver.</p>
+    
+    <div class="step">
+        <span class="step-n">Adım 1</span><br><b>Google Gruba Katıl</b>
+        <a href="https://groups.google.com/g/dubflow-test-ekibi" class="btn">Gruba Katıl</a>
     </div>
 
-    <div class="step-card" style="border-left-color: var(--secondary);">
-        <span class="step-num">Adım 2</span>
-        <span class="step-title">Testi Onayla (Web Linki)</span>
-        <a href="BURAYA_WEB_TEST_LINKINI_YAPISTIR" target="_blank" class="btn">Testi Etkinleştir</a>
+    <div class="step">
+        <span class="step-n">Adım 2</span><br><b>Testi Etkinleştir</b>
+        <a href="BURAYA_WEB_LINKINI_YAPISTIR" class="btn">Onay Ver</a>
     </div>
 
-    <div class="step-card" style="border-left-color: #f472b6;">
-        <span class="step-num">Adım 3</span>
-        <span class="step-title">Uygulamayı İndir</span>
-        <a href="BURAYA_ANDROID_LINKINI_YAPISTIR" target="_blank" class="btn">Play Store'dan İndir</a>
+    <div class="step">
+        <span class="step-n">Adım 3</span><br><b>Uygulamayı Yükle</b>
+        <a href="BURAYA_ANDROID_LINKINI_YAPISTIR" class="btn">Play Store'dan İndir</a>
     </div>
 
-    <div class="warning-box">
-        <strong>⚠️ ÖNEMLİ:</strong> Google kuralları gereği uygulamayı 14 gün boyunca telefonunuzda tutmanız ve ara ara açmanız gerekmektedir.
-    </div>
-
-    <div class="footer">
-        © 2026 Krmg Studio - Düzce'den Sevgilerle
-    </div>
+    <div class="info">⚠️ Google kuralları gereği lütfen uygulamayı 14 gün boyunca silmeyin.</div>
 </div>
-
 </body>
 </html>
