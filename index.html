@@ -2,223 +2,219 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DubFlow AI | Tester Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DubFlow | Test Ekibi</title>
     <style>
         :root {
-            /* Renk Paleti Detaylı Anlatım (image_65dfd1.jpg'den esinlenildi):
-               - --bg-deep: Görseldeki derin şehir ve şehir manzarası koyu mavi/siyah ton.
-               - --cyber-pink: Görseldeki ana veri sıçraması ve neon pembe tonu.
-               - --cyber-cyan: Görseldeki kulaklık ve veri çizgileri neon turkuaz tonu.
-               - --card-bg: Yarı saydam cyber-panel hissi için koyu bir ton.
-               - --text-main: Yüksek okunurluk için açık gri/beyaz ton.
-            */
-            --bg-deep: #03081a;
-            --cyber-pink: #f472b6;
-            --cyber-cyan: #22d3ee;
-            --card-bg: rgba(17, 24, 39, 0.9);
-            --text-main: #f3f4f6;
-            --btn-gradient: linear-gradient(135deg, var(--cyber-pink), var(--cyber-cyan));
-            --border-glow: 0 0 10px rgba(34, 211, 238, 0.3);
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-purple: #9d50bb;
+            --accent-blue: #6e7ff3;
+            --text-main: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-deep);
+            background: #050505; /* fallback */
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(244, 114, 182, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.15) 0%, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(74, 20, 140, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(13, 71, 161, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(123, 31, 162, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(26, 35, 126, 0.3) 0px, transparent 50%);
+            background-attachment: fixed;
             color: var(--text-main);
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-area {
+            margin-bottom: 24px;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            margin: 0 auto 16px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            box-shadow: 0 10px 20px rgba(157, 80, 187, 0.3);
         }
 
-        .cyber-container {
-            width: 90%;
-            max-width: 420px;
-            background: var(--card-bg);
-            padding: 35px;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Cyber-Electric Border Efekti */
-        .cyber-container::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 2px;
-            background: var(--btn-gradient);
-            box-shadow: var(--border-glow);
-        }
-
-        .app-header {
-            margin-bottom: 30px;
-        }
-
-        /* Görseldeki logoyu veya benzer bir ikonu buraya ekle */
-        .app-logo { font-size: 3.5rem; margin-bottom: -5px; }
-        
         h1 {
-            font-size: 2.3rem;
-            margin: 0 0 10px 0;
-            background: var(--btn-gradient);
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, #ccc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1.5px;
-            font-weight: 800;
         }
 
-        p.app-desc {
-            color: #9ca3af;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            font-size: 1rem;
-            font-weight: 400;
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 16px;
+            margin-bottom: 40px;
         }
 
-        .steps-list {
+        .steps {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .step-item {
+            display: flex;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--glass-border);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .step-text h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 30px;
         }
 
-        .step-module {
-            background: rgba(255, 255, 255, 0.02);
+        .btn {
+            display: block;
+            padding: 16px;
             border-radius: 16px;
-            padding: 15px 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            text-align: left;
-        }
-
-        .step-num {
-            font-size: 0.8rem;
-            color: var(--cyber-cyan);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 3px;
-        }
-
-        .step-content {
-            flex-grow: 1;
-        }
-
-        .step-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 8px;
-            display: block;
-            color: #fff;
-        }
-
-        .step-text {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .cyber-btn {
-            display: inline-block;
-            background: var(--btn-gradient);
-            color: #03081a;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            box-shadow: 0 8px 15px rgba(244, 114, 182, 0.2);
-            transition: transform 0.1s ease, box-shadow 0.2s ease;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
-        .cyber-btn:active {
-            transform: scale(0.97);
-            box-shadow: 0 4px 10px rgba(244, 114, 182, 0.2);
+        .btn-primary {
+            background: #fff;
+            color: #000;
         }
 
-        .cyber-btn:hover {
-            box-shadow: 0 12px 20px rgba(244, 114, 182, 0.3);
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background: #f0f0f0;
         }
 
-        .warning-module {
-            padding: 15px;
-            background: rgba(244, 114, 182, 0.08);
-            border-radius: 14px;
-            border: 1px dashed rgba(244, 114, 182, 0.3);
-            color: #fca5a5;
-            font-size: 0.85rem;
-            margin-top: 30px;
-            line-height: 1.5;
+        .btn-secondary {
+            background: var(--glass-border);
+            color: #fff;
+            border: 1px solid var(--glass-border);
         }
 
-        .warning-module strong { color: var(--cyber-pink); }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
 
-        .krmg-footer {
-            margin-top: 25px;
-            font-size: 0.8rem;
-            color: #64748b;
+        footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .thanks-msg {
+            font-style: italic;
+            margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
-<div class="cyber-container">
-    <div class="app-header">
-        <div class="app-logo">🎙️</div>
-        <h1>DubFlow AI</h1>
-        <p class="app-desc">Dünyanın dilini konuşmaya hazır mısın? Test ekibimize katılarak bize güç ver!</p>
-    </div>
+    <div class="container">
+        <div class="logo-area">
+            <div class="logo-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            </div>
+            <h1>DubFlow</h1>
+            <p class="subtitle">Kapalı Test Süreci</p>
+        </div>
 
-    <div class="steps-list">
-        <div class="step-module">
-            <span class="step-num">01</span>
-            <div class="step-content">
-                <span class="step-title">Google Grubuna Katıl</span>
-                <span class="step-text">Test güncellemelerine ve talimatlara erişim için gerekli.</span>
-                <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="cyber-btn">Gruba Katıl</a>
+        <div class="steps">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                    <h3>Google Gruba Katıl</h3>
+                    <p>Test kullanıcısı olarak tanımlanmanız için önce aşağıdaki butondan test grubumuza dahil olmalısınız.</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                    <h3>Testi Kabul Et</h3>
+                    <p>Gruba katıldıktan sonra Play Store test bağlantısına giderek "Test Programına Katıl" butonuna tıklayın.</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                    <h3>İndir ve Dene</h3>
+                    <p>İşlemler tamamlandığında uygulamayı Play Store üzerinden indirebilir ve geri bildirimlerinizi iletebilirsiniz.</p>
+                </div>
             </div>
         </div>
 
-        <div class="step-module">
-            <span class="step-num">02</span>
-            <div class="step-content">
-                <span class="step-title">Testi Etkinleştir</span>
-                <span class="step-desc">Play Console'da test sürümünü onaylayın.</span>
-                <a href="BURAYA_PLAY_CONSOLEDAKI_WEB_LINKINI_YAPISTIR" target="_blank" class="cyber-btn">Onay Ver</a>
-            </div>
+        <div class="cta-buttons">
+            <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn btn-primary">1. Gruba Katıl</a>
+            <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-secondary">2. Play Store Test Linki</a>
         </div>
 
-        <div class="step-module">
-            <span class="step-num">03</span>
-            <div class="step-content">
-                <span class="step-title">Uygulamayı İndir</span>
-                <span class="step-desc">Play Store'dan DubFlow'u yükleyin ve deneyimleyin.</span>
-                <a href="BURAYA_PLAY_CONSOLEDAKI_ANDROID_LINKINI_YAPISTIR" target="_blank" class="cyber-btn">Play Store'dan İndir</a>
-            </div>
-        </div>
+        <footer>
+            <p class="thanks-msg">DubFlow'u mükemmelleştirmemize yardımcı olduğunuz için teşekkürler! ✨</p>
+            <p>© 2026 DubFlow AI Project</p>
+        </footer>
     </div>
-
-    <div class="warning-module">
-        <strong>⚠️ ÖNEMLİ:</strong> Lütfen uygulamayı 14 gün boyunca silmeyin ve ara ara açıp kullanarak test sürecine destek olun. Teşekkürler.
-    </div>
-
-    <div class="krmg-footer">
-        © 2026 Krmg Studio - Düzce'den Sevgilerle
-    </div>
-</div>
 
 </body>
 </html>
