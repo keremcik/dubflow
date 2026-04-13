@@ -8,11 +8,9 @@
         :root {
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --accent-purple: #9d50bb;
             --accent-blue: #6e7ff3;
             --text-main: #ffffff;
-            --text-dim: rgba(255, 255, 255, 0.7);
-            /* Yeni Buton Renkleri */
+            --text-dim: rgba(255, 255, 255, 0.6);
             --btn-grad-start: #1957df;
             --btn-grad-end: #7c14b8;
         }
@@ -21,198 +19,128 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
             background: #050505;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(74, 20, 140, 0.4) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(13, 71, 161, 0.4) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(123, 31, 162, 0.3) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(26, 35, 126, 0.3) 0px, transparent 50%);
+            background-image: radial-gradient(at 0% 0%, rgba(74, 20, 140, 0.4) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(13, 71, 161, 0.4) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 450px;
+            max-width: 480px;
             width: 100%;
             background: var(--glass-bg);
             backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
             border-radius: 35px;
-            padding: 40px 24px;
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
-        .app-logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 22px;
-            margin-bottom: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            object-fit: cover;
+        .app-logo { width: 80px; height: 80px; border-radius: 20px; margin-bottom: 15px; }
+        h1 { font-size: 32px; margin-bottom: 5px; }
+        .subtitle { color: var(--text-dim); margin-bottom: 40px; }
+
+        .content-flow { text-align: left; }
+        .step-box { margin-bottom: 45px; }
+        
+        .step-header { display: flex; align-items: center; margin-bottom: 20px; }
+        .step-number { 
+            background: rgba(255,255,255,0.1); width: 28px; height: 28px; 
+            border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; margin-right: 12px; color: var(--accent-blue);
+            font-weight: bold;
         }
 
-        h1 {
-            font-size: 34px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 4px;
-            background: linear-gradient(to bottom, #fff, #aaa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Görsel Önizleme Stili */
+        .preview-img {
+            width: 100%;
+            border-radius: 15px;
+            margin: 15px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .subtitle {
-            color: var(--text-dim);
-            font-size: 16px;
-            margin-bottom: 35px;
-        }
-
-        .content-flow {
-            text-align: left;
-        }
-
-        .step-box {
-            margin-bottom: 35px;
-        }
-
-        .step-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .step-number {
+        .instruction-text {
             font-size: 14px;
-            font-weight: 700;
-            background: rgba(255,255,255,0.1);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            color: var(--accent-blue);
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .step-description {
-            font-size: 14px;
-            color: var(--text-dim);
-            line-height: 1.5;
-            margin-top: 12px;
-            padding-left: 36px;
+            color: #ffca28; /* Dikkat çekici sarı/turuncu tonu */
+            margin-bottom: 10px;
+            font-weight: 500;
+            display: block;
         }
 
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            border-radius: 18px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            margin-left: 36px;
-            border: none;
+            display: flex; align-items: center; justify-content: center;
+            padding: 16px; border-radius: 18px; text-decoration: none;
+            font-weight: 600; transition: 0.3s; border: none;
         }
+        .btn-primary { background: #fff; color: #000; }
+        .btn-gradient { background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end)); color: #fff; }
+        .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-        .btn-primary {
-            background: #ffffff;
-            color: #000;
-        }
-
-        .btn-gradient {
-            background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(25, 87, 223, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
-
-        .btn-logo {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-
-        footer {
-            margin-top: 40px;
-            border-top: 1px solid var(--glass-border);
-            padding-top: 25px;
-        }
-
-        .thanks {
-            font-size: 14px;
-            color: var(--text-dim);
-            font-style: italic;
-        }
+        .step-description { font-size: 14px; color: var(--text-dim); margin-top: 15px; line-height: 1.6; }
+        
+        footer { margin-top: 30px; border-top: 1px solid var(--glass-border); padding-top: 20px; font-size: 13px; color: var(--text-dim); }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="Başlıksız82_20260408222853.jpg" alt="DubFlow Logo" class="app-logo">
+        <img src="Başlıksız82_20260408222853.jpg" alt="Logo" class="app-logo">
         <h1>DubFlow</h1>
-        <p class="subtitle">Early Access & Testing</p>
+        <p class="subtitle">Test Katılım Rehberi</p>
 
         <div class="content-flow">
             <div class="step-box">
                 <div class="step-header">
                     <div class="step-number">1</div>
-                    <h3>Gruba Katılın</h3>
+                    <h3>Google Grubuna Katılın</h3>
                 </div>
                 
+                <span class="instruction-text">➜ Açılan sayfada "Gruba katıl" butonuna tıklayın:</span>
+                <img src="1000031682.jpg" alt="Grup Katılım" class="preview-img">
+
                 <a href="https://groups.google.com/g/dubflow-test-ekibi" target="_blank" class="btn btn-primary">
                     1. Gruba Katıl
                 </a>
-
-                <p class="step-description">
-                    Test kullanıcısı yetkisi alabilmek için öncelikle Google Grubumuza katılmanız gerekmektedir.
-                </p>
+                <p class="step-description">Uygulamayı Play Store'da görebilmeniz için bu mail grubuna üye olmanız teknik bir zorunluluktur.</p>
             </div>
 
             <div class="step-box">
                 <div class="step-header">
                     <div class="step-number">2</div>
-                    <h3>Testi Kabul Et ve İndir</h3>
+                    <h3>Testi Onaylayın</h3>
                 </div>
 
-                <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-gradient">
-                    <img src="Başlıksız82_20260408222853.jpg" class="btn-logo" alt="">
-                    2. Play Store Test Linki
-                </a>
+                <span class="instruction-text">➜ "Become a tester" butonuna basarak onay verin:</span>
+                <img src="1000031686.jpg" alt="Tester Onay" class="preview-img">
 
-                <p class="step-description">
-                    Gruba katıldıktan sonra yukarıdaki bağlantıdan testi onaylayıp uygulamayı Play Store üzerinden indirebilirsiniz.
-                </p>
+                <a href="https://play.google.com/apps/testing/com.dubflow.ai.app" target="_blank" class="btn btn-gradient">
+                    2. Testi Onayla ve İndir
+                </a>
+                
+                <p class="step-description">Onay verdikten sonra "download it on Google Play" linkine tıklayarak mağazaya gidebilirsiniz.</p>
+                <img src="1000031688.jpg" alt="Download Link" class="preview-img" style="margin-top:10px; opacity:0.8;">
+            </div>
+
+            <div class="step-box">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3>Yükle ve Başla</h3>
+                </div>
+                <img src="1000031692.jpg" alt="Play Store" class="preview-img">
+                <p class="step-description">Artık uygulama sizin için erişilebilir olacak. "Yükle" diyerek DubFlow dünyasına katılabilirsiniz!</p>
             </div>
         </div>
 
         <footer>
-            <p class="thanks">DubFlow'u geliştirmemize yardımcı olduğun için teşekkürler! ✨</p>
+            <p>DubFlow Geliştirici Ekibi ✨</p>
         </footer>
     </div>
 
