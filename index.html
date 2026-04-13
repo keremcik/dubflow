@@ -8,7 +8,8 @@
         :root {
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --accent-blue: #6e7ff3;
+            --accent-purple: #a855f7;
+            --accent-blue: #6366f1;
             --text-main: #ffffff;
             --text-dim: rgba(255, 255, 255, 0.6);
             --btn-grad-start: #1957df;
@@ -19,73 +20,73 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
         }
 
         body {
             background: #050505;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(157, 80, 187, 0.3) 0px, transparent 50%), 
-                radial-gradient(at 100% 0%, rgba(25, 87, 223, 0.3) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.25) 0px, transparent 50%), 
+                radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.2) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
         }
 
         .container {
-            max-width: 480px;
+            max-width: 460px;
             width: 100%;
             background: var(--glass-bg);
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border: 1px solid var(--glass-border);
             border-radius: 40px;
-            padding: 40px 24px;
+            padding: 35px 20px;
             text-align: center;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
-        /* Bilgilendirme Banner */
+        /* Yeni Mor ve Tatlı Bilgi Kutusu */
         .top-info {
-            background: rgba(255, 202, 40, 0.1);
-            border: 1px solid rgba(255, 202, 40, 0.2);
-            color: #ffca28;
-            padding: 15px;
-            border-radius: 20px;
-            font-size: 13.5px;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #d8b4fe;
+            padding: 16px;
+            border-radius: 22px;
+            font-size: 14px;
             line-height: 1.5;
             margin-bottom: 30px;
             text-align: left;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .app-logo { width: 90px; height: 90px; border-radius: 22px; margin-bottom: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        h1 { font-size: 36px; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 5px; }
-        .subtitle { color: var(--text-dim); margin-bottom: 40px; font-size: 15px; }
+        .app-logo { width: 85px; height: 85px; border-radius: 22px; margin-bottom: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        h1 { font-size: 34px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 5px; }
+        .subtitle { color: var(--text-dim); margin-bottom: 35px; font-size: 14px; letter-spacing: 0.5px; }
 
         .content-flow { text-align: left; }
-        .step-box { margin-bottom: 50px; }
+        .step-box { margin-bottom: 45px; }
         
         .step-header { display: flex; align-items: center; margin-bottom: 15px; }
         .step-number { 
-            background: rgba(255,255,255,0.1); width: 26px; height: 26px; 
+            background: rgba(168, 85, 247, 0.2); width: 26px; height: 26px; 
             border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; margin-right: 12px; color: var(--accent-blue);
-            font-weight: bold; font-size: 14px;
+            justify-content: center; margin-right: 12px; color: #d8b4fe;
+            font-weight: bold; font-size: 13px;
         }
 
         /* Butonlar ve Parlama Efektleri */
         .btn {
             display: flex; align-items: center; justify-content: center;
             padding: 18px; border-radius: 20px; text-decoration: none;
-            font-weight: 600; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border: none; margin-bottom: 20px;
+            font-weight: 700; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: none; margin-bottom: 18px;
         }
 
         .btn-primary { 
-            background: #fff; color: #000; 
-            box-shadow: 0 0 0px rgba(255,255,255,0);
+            background: #ffffff; color: #000; 
         }
         .btn-primary:hover { 
             transform: scale(1.02); 
@@ -95,52 +96,55 @@
         .btn-gradient { 
             background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end)); 
             color: #fff;
-            box-shadow: 0 0 0px rgba(124, 20, 184, 0);
         }
         .btn-gradient:hover { 
             transform: scale(1.02); 
-            box-shadow: 0 0 30px rgba(124, 20, 184, 0.5); 
+            box-shadow: 0 0 30px rgba(124, 20, 184, 0.6); 
         }
 
-        .btn-logo {
-            width: 26px; height: 26px; border-radius: 6px;
-            margin-right: 12px; object-fit: cover;
-        }
+        .btn-logo { width: 26px; height: 26px; border-radius: 6px; margin-right: 12px; object-fit: cover; }
 
-        /* Görsel ve Yazı Düzeni */
         .preview-img {
             width: 100%; border-radius: 18px; margin: 10px 0;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .instruction-text {
-            font-size: 14px; color: var(--text-dim);
-            margin-bottom: 10px; font-weight: 500; display: block;
-        }
-
-        .step-description { font-size: 14px; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
+        .instruction-text { font-size: 13px; color: var(--text-dim); margin-bottom: 8px; display: block; }
+        .step-description { font-size: 13.5px; color: var(--text-dim); margin-top: 8px; line-height: 1.5; }
         
-        footer { 
-            margin-top: 40px; border-top: 1px solid var(--glass-border); 
-            padding-top: 25px; text-align: center;
+        /* Belirgin Feedback Alanı */
+        .feedback-section {
+            margin-top: 40px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 28px;
+            border: 1px dashed rgba(168, 85, 247, 0.4);
         }
         .feedback-msg {
-            color: #fff; font-size: 15px; font-weight: 500; margin-bottom: 10px;
+            color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 8px;
+            display: block;
         }
-        .dev-team { font-size: 13px; color: var(--text-dim); }
+        .dm-note {
+            color: #d8b4fe; font-size: 14px; font-weight: 500;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="top-info">
-            ⚠️ <b>Önemli Not:</b> Uygulama şu anlık biraz yavaş dublaj yapıyor. Play Store'da yayınlayacağım zaman daha güçlü bir VPS'e geçeceğim, o zaman hızlanacak. Anlayışınız için teşekkürler!
+            💜 <b>Küçük bir not:</b> Uygulama şu anlık biraz yavaş dublaj yapıyor olabilir. Play Store'da tam yayına geçtiğimizde çok daha güçlü bir VPS'e taşınacağız ve her şey ışık hızında olacak! Sabrınız için teşekkürler.
         </div>
 
         <img src="Başlıksız82_20260408222853.jpg" alt="Logo" class="app-logo">
         <h1>DubFlow</h1>
-        <p class="subtitle">Beta Test Katılım Rehberi</p>
+        <p class="subtitle">BETA TEST KATILIM REHBERİ</p>
 
         <div class="content-flow">
             <div class="step-box">
@@ -153,9 +157,9 @@
                     1. Gruba Katıl
                 </a>
 
-                <span class="instruction-text">➜ Açılan sayfada "Gruba katıl" butonuna tıklayın:</span>
+                <span class="instruction-text">➜ Açılan sayfada mavi butona tıklayın:</span>
                 <img src="katil.jpg" alt="Grup Katılım" class="preview-img">
-                <p class="step-description">Uygulamayı Play Store'da görebilmeniz için bu mail grubuna üye olmanız teknik bir zorunluluktur.</p>
+                <p class="step-description">Uygulamanın Play Store'da görünmesi için bu gruba üye olman gerekiyor.</p>
             </div>
 
             <div class="step-box">
@@ -169,26 +173,30 @@
                     2. Testi Onayla ve İndir
                 </a>
 
-                <span class="instruction-text">➜ "Become a tester" butonuna basarak onay verin:</span>
+                <span class="instruction-text">➜ "Become a tester" diyerek onay verin:</span>
                 <img src="tester.jpg" alt="Tester Onay" class="preview-img">
                 
-                <p class="step-description">Onay verdikten sonra "download it on Google Play" linkine tıklayarak mağazaya gidebilirsiniz.</p>
-                <img src="dow.jpg" alt="Download Link" class="preview-img" style="opacity:0.8;">
+                <p class="step-description">Onay sonrası "download it on Google Play" diyerek mağazaya uçabilirsin!</p>
+                <img src="dow.jpg" alt="Download Link" class="preview-img" style="opacity:0.7;">
             </div>
 
-            <div class="step-box">
+            <div class="step-box" style="margin-bottom: 0;">
                 <div class="step-header">
                     <div class="step-number">3</div>
                     <h3>Yükle ve Başla</h3>
                 </div>
                 <img src="play.jpg" alt="Play Store" class="preview-img">
-                <p class="step-description">Artık uygulama sizin için erişilebilir olacak. "Yükle" diyerek DubFlow dünyasına katılabilirsiniz!</p>
+                <p class="step-description">DubFlow dünyasına hoş geldin! Yükle butonuna basman yeterli.</p>
             </div>
         </div>
 
-        <footer>
-            <p class="feedback-msg">Lütfen bir hata bulursanız veya bir öneriniz varsa söyleyin! 🙏</p>
-            <p class="dev-team">DubFlow Geliştirici Ekibi ✨</p>
+        <div class="feedback-section">
+            <span class="feedback-msg">Hata mı buldun ya da bir önerin mi var? 🙏</span>
+            <span class="dm-note">Lütfen çekinmeden <b>DM'den yazabilirsin!</b> Her türlü fikrin benim için çok değerli. ✨</span>
+        </div>
+
+        <footer style="margin-top: 25px; opacity: 0.5; font-size: 12px;">
+            DubFlow Geliştirici Ekibi © 2026
         </footer>
     </div>
 
